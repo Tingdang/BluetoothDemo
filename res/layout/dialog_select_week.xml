@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_vertical_white" >
+
+    <FrameLayout
+        style="@style/fill_wrap"
+        android:background="@color/them_bg_y" >
+
+        <ImageView
+            android:id="@+id/selected"
+            style="@style/bt"
+            android:layout_gravity="end"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/selected" />
+    </FrameLayout>
+
+    <RelativeLayout style="@style/fill_wrap_vertical" >
+
+        <CheckBox
+            android:id="@+id/monday"
+            style="@style/wrap"
+            android:layout_centerHorizontal="true"
+            android:text="@string/monday" />
+
+        <CheckBox
+            android:id="@+id/tuesday"
+            style="@style/wrap"
+            android:layout_below="@id/monday"
+            android:layout_centerHorizontal="true"
+            android:text="@string/tuesday" />
+
+        <CheckBox
+            android:id="@+id/wednesday"
+            style="@style/wrap"
+            android:layout_below="@id/tuesday"
+            android:layout_centerHorizontal="true"
+            android:text="@string/wednesday" />
+
+        <CheckBox
+            android:id="@+id/thursday"
+            style="@style/wrap"
+            android:layout_below="@id/wednesday"
+            android:layout_centerHorizontal="true"
+            android:text="@string/thursday" />
+
+        <CheckBox
+            android:id="@+id/friday"
+            style="@style/wrap"
+            android:layout_below="@id/thursday"
+            android:layout_centerHorizontal="true"
+            android:text="@string/friday" />
+
+        <CheckBox
+            android:id="@+id/saturday"
+            style="@style/wrap"
+            android:layout_below="@id/friday"
+            android:layout_centerHorizontal="true"
+            android:text="@string/saturday" />
+
+        <CheckBox
+            android:id="@+id/sunday"
+            style="@style/wrap"
+            android:layout_below="@id/saturday"
+            android:layout_centerHorizontal="true"
+            android:text="@string/sunday" />
+    </RelativeLayout>
+
+</LinearLayout>

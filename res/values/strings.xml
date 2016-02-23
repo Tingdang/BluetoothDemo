@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BluetoothDemo</string>
+    <string name="stopScan">停止</string>
+    <string name="scan">扫描</string>
+    <string name="connect">连接</string>
+    <string name="disconnect">断开连接</string>
+        
+    <string name="copyRights">Wireless by Spark</string>
+    <string name="no_ble">手机不支持BLE4.0服务!</string>
+    <string name="not_available">不可用</string>
+    <string name="scanner_empty">没有找到蓝牙设备.</string>
+    <string name="device_disconnect">蓝牙设备已断开连接.</string>
+    <string name="scanner_subtitle_bonded">已绑定的蓝牙设备:</string>
+    <string name="scanner_subtitle__not_bonded">可用的蓝牙设备:</string>
+
+    <string name="noconnect">手环未连接,无法测试功能.</string>
+    <string name="nonedevice">非演示手环,无法测试功能.</string>
+    <string name="deviceinfoStr">手环硬件信息:</string>
+    <string name="synchronizationtimeStr">同步系统时间</string>
+    <string name="synchronizationStr">同步历史数据</string>
+    <string name="syncCompleteStr">同步完成</string>
+    <string name="syncErrStr">同步失败</string>
+    <string name="intervals">回连间隔:</string>
+    <string name="dest_steps">目标步数:</string>
+    <string name="hint_alarm">闹钟</string>
+    <string name="hint_awake">智能唤醒</string>
+    <string name="hint_repeat">重复周期:</string>
+    <string name="hint_time">时间:</string>
+    <string name="sedentaryAwake">久坐提醒</string>
+    <string name="starttimeStr">提醒时间段起始于:</string>
+    <string name="overtimeStr">提醒时间段结束于:</string>
+    <string name="sedentaryPeriod">久坐最长时间:   </string>
+    <string name="title_radiation">辐射检测</string>
+    <string name="title_fetalmovement">胎动检测</string>
+    <string name="batteryStr">电量:</string>
+    <string name="radiationStr">辐射:</string>
+    <string name="stepsStr">步数:</string>
+    <string name="rssiStr">信号:</string>
+    <string name="chargingUnit">%</string>
+    <string name="savePower">夜间省电</string>
+    <string name="unit_minute">分钟</string>
+    <string name="unit_second">秒</string>
+    <string name="unit_step">步</string>
+    <string name="unit_mG">V/m</string>
+    <string name="unit_dBm">dBm</string>
+    <string name="beyondPeriod">设置无效,最长久坐时长应小于设置的时间区间!</string>
+    <string name="nolater">设置无效,起始时间不能晚于结束时间!</string>
+    <string name="hint_synch">数据同步期间不允许操作!</string>
+    <string name="title_alert">警&#160;&#160;告</string>
+    <string name="close_auto">关闭自动回连</string>
+    <string name="smart_alarm">闹钟设置</string>
+    <string name="timestyle">--:--</string>
+    <string name="am">am</string>
+    <string name="hint_alarm_weekday">周一，周二，周三，周四，周五</string> 
+    <string name="open">开</string>
+    <string name="close">关</string>
+    <string name="monday">周一</string>
+    <string name="tuesday">周二</string>
+    <string name="wednesday">周三</string>
+    <string name="thursday">周四</string>
+    <string name="friday">周五</string>
+    <string name="saturday">周六</string>
+    <string name="sunday">周日</string>  
+    <string name="everyday">每天</string>  
+    <string name="workday">工作日</string>  
+    <string name="time">时间</string>   
+    <string name="title_repetition">重复周期</string>
+    <string name="smart_wake_up">智能唤醒</string> 
+    <string name="hint_smart_wake_up">允许闹钟在设定时间前30分钟内将我从浅度睡眠中唤醒，让我更轻松的睡眠</string>
+    <string name="clickfor">点击获取</string>              
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.spark.percent.PercentFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/fill"
+    android:background="@drawable/background"
+    android:fitsSystemWindows="true" >
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        app:layout_heightPercent="@string/y508_66"
+        app:layout_marginTopPercent="@string/y48"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/splash2" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="@string/y480"
+        app:layout_marginTopPercent="@string/y43"
+        app:layout_widthPercent="@string/x353"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/splash4" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        app:layout_heightPercent="@string/y439"
+        app:layout_marginTopPercent="@string/y38"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/splash3" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        app:layout_heightPercent="@string/y400"
+        app:layout_marginTopPercent="@string/y52"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/splash1" />
+
+    <ImageView
+        android:id="@+id/iv_onlogin"
+        style="@style/wrap"
+        android:layout_gravity="center"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/onlogin"
+        android:visibility="invisible" />
+
+</com.spark.percent.PercentFrameLayout>

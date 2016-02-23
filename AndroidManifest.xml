@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE RelativeLayout>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.spark.bluetoothdemo"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="false" />
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppThemes" >
+        <activity
+            android:name="com.spark.activity.SplashScreen"
+            android:configChanges="keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.spark.activity.DeviceSearchActivity"
+            android:configChanges="keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.spark.activity.FunctionActivity"
+            android:configChanges="keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/SampleTheme.Light" >
+        </activity>
+        <activity
+            android:name="com.spark.activity.AlarmActivity"
+            android:configChanges="keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/SampleTheme.Light" >
+        </activity>
+        <activity
+            android:name="com.spark.activity.EditSmartAlarm"
+            android:configChanges="keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/SampleTheme.Light" >
+        </activity>
+        <activity
+            android:name="com.spark.activity.NiceAlarmRepetition"
+            android:configChanges="keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/SampleTheme.Light" >
+        </activity>
+        <activity
+            android:name="com.spark.activity.NotificationActivity"
+            android:configChanges="keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <!-- android:process=":service" -->
+        <service
+            android:name="com.spark.service.DfuService"
+            android:exported="false"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="no.nordicsemi.android.action.DFU_UPLOAD" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.spark.service.ReConnectService" >
+        </service>
+    </application>
+
+</manifest>

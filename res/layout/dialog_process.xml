@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.spark.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/wrap" >
+
+    <ImageView
+        android:id="@+id/iv_onlogin"
+        style="@style/wrap"
+        android:layout_gravity="center"
+        app:layout_paddingPercent="@string/x10"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/onlogin" />
+
+</com.spark.percent.PercentRelativeLayout>

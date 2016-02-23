@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.spark.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/fill"
+    android:background="@color/them_bg_y"
+    android:fadingEdge="none" >
+
+    <ImageView
+        android:id="@+id/leftBtn"
+        style="@style/wrap"
+        android:layout_centerVertical="true"
+        app:layout_paddingPercent="@string/x8"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/titlelog"/>
+
+    <com.spark.widget.CusFntTextView
+        android:id="@+id/title"
+        style="@style/wrap"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/leftBtn"
+        android:clickable="false"
+        android:focusable="false"
+        android:textColor="@android:color/white" />
+
+    <com.spark.widget.CusFntTextView
+        android:id="@+id/rightBtn"
+        style="@style/wrap"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        app:layout_marginRightPercent="@string/x8"
+        app:layout_textSizePercent="@string/t16"
+        android:text="@string/scan"
+        android:textColor="@android:color/white"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/iv_onScan"
+        style="@style/wrap"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@id/rightBtn"
+        app:layout_marginRightPercent="@string/x2"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/scan" 
+        android:visibility="invisible"/>
+
+</com.spark.percent.PercentRelativeLayout>

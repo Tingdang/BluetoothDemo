@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_vertical_white" >
+
+    <FrameLayout
+        style="@style/fill_wrap"
+        android:background="@color/them_bg_y" >
+
+        <ImageView
+            android:id="@+id/selected"
+            style="@style/bt"
+            android:layout_gravity="end"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/selected" />
+    </FrameLayout>
+
+    <LinearLayout style="@style/fill_wrap_horizontal" >
+
+        <net.simonvt.numberpicker.NumberPicker
+            android:id="@+id/hours"
+            style="@style/fill_wrap"
+            android:layout_weight="1" />
+
+        <net.simonvt.numberpicker.NumberPicker
+            android:id="@+id/min"
+            style="@style/fill_wrap"
+            android:layout_weight="1" />
+
+        <net.simonvt.numberpicker.NumberPicker
+            android:id="@+id/AMOrPM"
+            style="@style/fill_wrap"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</LinearLayout>

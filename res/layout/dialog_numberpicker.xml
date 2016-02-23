@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.spark.percent.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/fill_wrap_vertical" >
+
+    <com.spark.percent.PercentRelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        app:layout_heightPercent="@string/y32_33"
+        android:background="@color/them_bg_y" >
+
+        <ImageView
+            android:id="@+id/selected"
+            style="@style/bt"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:layout_marginRightPercent="@string/x20_33"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/selected" />
+    </com.spark.percent.PercentRelativeLayout>
+
+    <net.simonvt.numberpicker.NumberPicker
+        android:id="@+id/numPicker"
+        style="@style/fill_wrap" />
+
+</com.spark.percent.PercentLinearLayout>

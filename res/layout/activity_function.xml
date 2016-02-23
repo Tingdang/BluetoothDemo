@@ -1,0 +1,736 @@
+<com.spark.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/fill"
+    android:fitsSystemWindows="true" >
+
+    <com.spark.widget.TitleViewLayout
+        android:id="@+id/titleLay"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        app:layout_heightPercent="@string/y48"
+        app:titlecontent="@string/app_name" />
+
+    <View
+        android:id="@+id/view_divider0"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/titleLay"
+        app:layout_heightPercent="@string/y1"
+        android:background="@color/textGray3" />
+
+    <com.spark.percent.PercentLinearLayout
+        android:id="@+id/layconstant"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/view_divider0"
+        app:layout_heightPercent="@string/y30"
+        app:layout_paddingLeftPercent="@string/x10"
+        app:layout_paddingRightPercent="@string/x10"
+        android:background="@color/them_bg_y"
+        android:orientation="horizontal" >
+
+        <com.spark.percent.PercentRelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent" >
+
+            <com.spark.widget.CusFntTextView
+                android:id="@+id/lable_battery"
+                style="@style/wrap"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                app:layout_textSizePercent="@string/t16"
+                android:text="@string/batteryStr"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/tv_battery"
+                style="@style/wrap"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/lable_battery"
+                app:layout_textSizePercent="@string/t14"
+                android:textColor="@android:color/white" />
+        </com.spark.percent.PercentRelativeLayout>
+
+        <com.spark.percent.PercentRelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            app:layout_marginLeftPercent="@string/x10" >
+
+            <com.spark.widget.CusFntTextView
+                android:id="@+id/lable_radiation"
+                style="@style/wrap"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                app:layout_textSizePercent="@string/t16"
+                android:text="@string/radiationStr"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/tv_radiation"
+                style="@style/wrap"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/lable_radiation"
+                app:layout_textSizePercent="@string/t14"
+                android:textColor="@android:color/white" />
+        </com.spark.percent.PercentRelativeLayout>
+
+        <com.spark.percent.PercentRelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            app:layout_marginLeftPercent="@string/x10" >
+
+            <com.spark.widget.CusFntTextView
+                android:id="@+id/lable_steps"
+                style="@style/wrap"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                app:layout_textSizePercent="@string/t16"
+                android:text="@string/stepsStr"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/tv_steps"
+                style="@style/wrap"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/lable_steps"
+                app:layout_textSizePercent="@string/t14"
+                android:textColor="@android:color/white" />
+        </com.spark.percent.PercentRelativeLayout>
+
+        <com.spark.percent.PercentRelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            app:layout_marginLeftPercent="@string/x10" >
+
+            <com.spark.widget.CusFntTextView
+                android:id="@+id/lable_rssi"
+                style="@style/wrap"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                app:layout_textSizePercent="@string/t16"
+                android:text="@string/rssiStr"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/tv_rssi"
+                style="@style/wrap"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/lable_rssi"
+                app:layout_textSizePercent="@string/t14"
+                android:textColor="@android:color/white" />
+        </com.spark.percent.PercentRelativeLayout>
+    </com.spark.percent.PercentLinearLayout>
+
+    <ListView
+        android:id="@+id/resultlist"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        app:layout_heightPercent="@string/y85"
+        android:background="@color/warningbg"
+        android:divider="@color/textGray3"
+        android:dividerHeight="@dimen/y1"
+        android:scrollbarFadeDuration="0" />
+
+    <com.spark.percent.PercentFrameLayout
+        style="@style/fill_wrap"
+        android:layout_above="@id/resultlist"
+        android:layout_below="@id/layconstant"
+        android:background="@drawable/background" >
+
+        <TextView
+            android:id="@+id/tv_nodevice"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            app:layout_heightPercent="@string/y440"
+            android:gravity="center"
+            android:text="@string/device_disconnect"
+            android:textSize="28sp" />
+
+        <ScrollView
+            android:id="@+id/mCustomScrollView"
+            style="@style/fill_wrap"
+            android:fadeScrollbars="false"
+            android:fadingEdge="none"
+            android:scrollbarSize="4dp"
+            android:scrollbarThumbVertical="@drawable/scrollbar_vertical_thumb"
+            android:scrollbarTrackVertical="@drawable/scrollbar_vertical_track" >
+
+            <com.spark.percent.PercentLinearLayout style="@style/fill_vertical" >
+
+                <com.spark.percent.PercentRelativeLayout
+                    android:id="@+id/lay_deviceinfo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y36"
+                    app:layout_marginBottomPercent="@string/y10"
+                    app:layout_marginLeftPercent="@string/x20"
+                    app:layout_marginRightPercent="@string/x20"
+                    app:layout_marginTopPercent="@string/y10" >
+
+                    <com.spark.widget.CusFntTextView
+                        android:id="@+id/deviceinfo_tv"
+                        style="@style/wrap"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        app:layout_textSizePercent="@string/t16"
+                        android:text="@string/deviceinfoStr"
+                        android:textColor="@color/text2"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_deviceinfo"
+                        style="@style/wrap"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/deviceinfo_tv"
+                        app:layout_textSizePercent="@string/t16"
+                        android:textColor="@color/text2" />
+
+                    <ImageView
+                        style="@style/wrap"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_go1" />
+                </com.spark.percent.PercentRelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y1"
+                    android:background="@color/textGray3" />
+
+                <com.spark.percent.PercentLinearLayout
+                    style="@style/fill_vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y36"
+                    app:layout_marginBottomPercent="@string/y10"
+                    app:layout_marginLeftPercent="@string/x20"
+                    app:layout_marginRightPercent="@string/x20"
+                    app:layout_marginTopPercent="@string/y10"
+                    android:orientation="horizontal" >
+
+                    <com.spark.widget.CusFntButton
+                        android:id="@+id/synchronizationtime_bt"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        app:layout_marginRightPercent="@string/x10"
+                        app:layout_paddingPercent="@string/x3"
+                        app:layout_textSizePercent="@string/t18"
+                        android:background="@drawable/selector_gray_corners_button"
+                        android:text="@string/synchronizationtimeStr"
+                        android:textColor="@android:color/black" />
+
+                    <com.dd.CircularProgressButton
+                        android:id="@+id/synchronization_bt"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        app:layout_marginLeftPercent="@string/x10"
+                        app:layout_paddingPercent="@string/x3"
+                        app:layout_textSizePercent="@string/t18"
+                        android:textColor="@android:color/black"
+                        app:cpb_cornerRadius="24dp"
+                        app:cpb_textComplete="@string/syncCompleteStr"
+                        app:cpb_textError="@string/syncErrStr"
+                        app:cpb_textIdle="@string/synchronizationStr" />
+                </com.spark.percent.PercentLinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y1"
+                    android:background="@color/textGray3" />
+
+                <com.spark.percent.PercentRelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y36"
+                    app:layout_marginBottomPercent="@string/y10"
+                    app:layout_marginLeftPercent="@string/x20"
+                    app:layout_marginRightPercent="@string/x20"
+                    app:layout_marginTopPercent="@string/y10" >
+
+                    <com.spark.widget.CusFntTextView
+                        style="@style/wrap"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        app:layout_textSizePercent="@string/t16"
+                        android:text="@string/title_radiation"
+                        android:textColor="@color/text2"
+                        android:textStyle="bold" />
+
+                    <com.zcw.togglebutton.ToggleButton
+                        android:id="@+id/enableOrDisableRadiation"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="center_vertical"
+                        app:layout_heightPercent="@string/y25"
+                        app:layout_widthPercent="@string/x54"
+                        app:isDefaultOn="true" />
+                </com.spark.percent.PercentRelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y1"
+                    android:background="@color/textGray3" />
+
+                <com.spark.percent.PercentRelativeLayout
+                    android:id="@+id/laypowerSaving"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y36"
+                    app:layout_marginBottomPercent="@string/y10"
+                    app:layout_marginLeftPercent="@string/x20"
+                    app:layout_marginRightPercent="@string/x20"
+                    app:layout_marginTopPercent="@string/y10" >
+
+                    <com.spark.widget.CusFntTextView
+                        style="@style/wrap"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        app:layout_textSizePercent="@string/t16"
+                        android:text="@string/savePower"
+                        android:textColor="@color/text2"
+                        android:textStyle="bold" />
+
+                    <com.zcw.togglebutton.ToggleButton
+                        android:id="@+id/powerSavingSwitch"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="center_vertical"
+                        app:layout_heightPercent="@string/y25"
+                        app:layout_widthPercent="@string/x54"
+                        app:isDefaultOn="true" />
+                </com.spark.percent.PercentRelativeLayout>
+
+                <View
+                    android:id="@+id/view_divider1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y1"
+                    android:background="@color/textGray3" />
+
+                <com.spark.percent.PercentRelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y36"
+                    app:layout_marginBottomPercent="@string/y10"
+                    app:layout_marginLeftPercent="@string/x20"
+                    app:layout_marginRightPercent="@string/x20"
+                    app:layout_marginTopPercent="@string/y10" >
+
+                    <com.spark.widget.CusFntTextView
+                        android:id="@+id/fetalmovement_tv"
+                        style="@style/wrap"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        app:layout_textSizePercent="@string/t16"
+                        android:text="@string/title_fetalmovement"
+                        android:textColor="@color/text2"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_fetalmovement"
+                        style="@style/wrap"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/fetalmovement_tv"
+                        app:layout_textSizePercent="@string/t14"
+                        android:textColor="@color/text2" />
+
+                    <com.zcw.togglebutton.ToggleButton
+                        android:id="@+id/enableOrDisableFetalMovement"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="center_vertical"
+                        app:layout_heightPercent="@string/y25"
+                        app:layout_widthPercent="@string/x54"
+                        app:isDefaultOn="false" />
+                </com.spark.percent.PercentRelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y1"
+                    android:background="@color/textGray3" />
+
+                <com.spark.percent.PercentRelativeLayout
+                    android:id="@+id/lay_destSteps"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y36"
+                    app:layout_marginBottomPercent="@string/y10"
+                    app:layout_marginLeftPercent="@string/x20"
+                    app:layout_marginRightPercent="@string/x20"
+                    app:layout_marginTopPercent="@string/y10" >
+
+                    <com.spark.widget.CusFntTextView
+                        android:id="@+id/destSteps_tv"
+                        style="@style/wrap"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        app:layout_textSizePercent="@string/t16"
+                        android:text="@string/dest_steps"
+                        android:textColor="@color/text2"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_destSteps"
+                        style="@style/wrap"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/destSteps_tv"
+                        app:layout_textSizePercent="@string/t14"
+                        android:textColor="@color/text2" />
+
+                    <ImageView
+                        style="@style/wrap"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_go1" />
+                </com.spark.percent.PercentRelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y1"
+                    android:background="@color/textGray3" />
+
+                <com.spark.percent.PercentRelativeLayout
+                    android:id="@+id/lay_intervals"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y36"
+                    app:layout_marginBottomPercent="@string/y10"
+                    app:layout_marginLeftPercent="@string/x20"
+                    app:layout_marginRightPercent="@string/x20"
+                    app:layout_marginTopPercent="@string/y10" >
+
+                    <com.spark.widget.CusFntTextView
+                        android:id="@+id/intervals_tv"
+                        style="@style/wrap"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        app:layout_textSizePercent="@string/t16"
+                        android:text="@string/intervals"
+                        android:textColor="@color/text2"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_intervals"
+                        style="@style/wrap"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/intervals_tv"
+                        app:layout_textSizePercent="@string/t14"
+                        android:textColor="@color/text2" />
+
+                    <ImageView
+                        style="@style/wrap"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_go1" />
+                </com.spark.percent.PercentRelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y1"
+                    android:background="@color/textGray3" />
+
+                <com.spark.percent.PercentRelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y36"
+                    app:layout_marginBottomPercent="@string/y10"
+                    app:layout_marginLeftPercent="@string/x20"
+                    app:layout_marginRightPercent="@string/x20"
+                    app:layout_marginTopPercent="@string/y10" >
+
+                    <com.spark.widget.CusFntTextView
+                        android:id="@+id/sedentary_tv"
+                        style="@style/wrap"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        app:layout_textSizePercent="@string/t16"
+                        android:text="@string/sedentaryAwake"
+                        android:textColor="@color/text2"
+                        android:textStyle="bold" />
+
+                    <com.zcw.togglebutton.ToggleButton
+                        android:id="@+id/enableOrDisableSedentary"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="center_vertical"
+                        app:layout_heightPercent="@string/y25"
+                        app:layout_widthPercent="@string/x54"
+                        app:isDefaultOn="false" />
+                </com.spark.percent.PercentRelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y1"
+                    android:background="@color/textGray3" />
+
+                <com.spark.percent.PercentRelativeLayout
+                    android:id="@+id/lay_timeperiod"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y30"
+                    app:layout_marginLeftPercent="@string/x40"
+                    app:layout_marginRightPercent="@string/x40" >
+
+                    <com.spark.widget.CusFntTextView
+                        android:id="@+id/timeperiod_tv"
+                        style="@style/wrap"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        app:layout_textSizePercent="@string/t16"
+                        android:text="@string/sedentaryPeriod"
+                        android:textColor="@color/text2"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_timeperiod"
+                        style="@style/wrap"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/timeperiod_tv"
+                        app:layout_textSizePercent="@string/t14"
+                        android:textColor="@color/text2" />
+
+                    <ImageView
+                        style="@style/wrap"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_go1" />
+                </com.spark.percent.PercentRelativeLayout>
+
+                <com.spark.percent.PercentRelativeLayout
+                    android:id="@+id/lay_starttime"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y30"
+                    app:layout_marginLeftPercent="@string/x40"
+                    app:layout_marginRightPercent="@string/x40" >
+
+                    <com.spark.widget.CusFntTextView
+                        android:id="@+id/starttime_tv"
+                        style="@style/wrap"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        app:layout_textSizePercent="@string/t16"
+                        android:text="@string/starttimeStr"
+                        android:textColor="@color/text2"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_starttime"
+                        style="@style/wrap"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/starttime_tv"
+                        app:layout_textSizePercent="@string/t14"
+                        android:textColor="@color/text2" />
+
+                    <ImageView
+                        style="@style/wrap"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_go1" />
+                </com.spark.percent.PercentRelativeLayout>
+
+                <com.spark.percent.PercentRelativeLayout
+                    android:id="@+id/lay_overtime"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y30"
+                    app:layout_marginLeftPercent="@string/x40"
+                    app:layout_marginRightPercent="@string/x40" >
+
+                    <com.spark.widget.CusFntTextView
+                        android:id="@+id/overtime_tv"
+                        style="@style/wrap"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        app:layout_textSizePercent="@string/t16"
+                        android:text="@string/overtimeStr"
+                        android:textColor="@color/text2"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_overtime"
+                        style="@style/wrap"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/overtime_tv"
+                        app:layout_textSizePercent="@string/t14"
+                        android:textColor="@color/text2" />
+
+                    <ImageView
+                        style="@style/wrap"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_go1" />
+                </com.spark.percent.PercentRelativeLayout>
+
+                <View
+                    android:id="@+id/view_divider2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y1"
+                    android:background="@color/textGray3" />
+
+                <com.spark.percent.PercentRelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y36"
+                    app:layout_marginBottomPercent="@string/y10"
+                    app:layout_marginLeftPercent="@string/x20"
+                    app:layout_marginRightPercent="@string/x20"
+                    app:layout_marginTopPercent="@string/y10" >
+
+                    <com.spark.widget.CusFntTextView
+                        style="@style/wrap"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        app:layout_textSizePercent="@string/t16"
+                        android:text="@string/hint_alarm"
+                        android:textColor="@color/text2"
+                        android:textStyle="bold" />
+
+                    <com.zcw.togglebutton.ToggleButton
+                        android:id="@+id/enableOrDisableAlarm"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="center_vertical"
+                        app:layout_heightPercent="@string/y25"
+                        app:layout_widthPercent="@string/x54"
+                        app:isDefaultOn="false" />
+                </com.spark.percent.PercentRelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y1"
+                    android:background="@color/textGray3" />
+
+                <com.spark.percent.PercentRelativeLayout
+                    android:id="@+id/lay_time"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y30"
+                    app:layout_marginLeftPercent="@string/x40"
+                    app:layout_marginRightPercent="@string/x40" >
+
+                    <com.spark.widget.CusFntTextView
+                        android:id="@+id/time_tv"
+                        style="@style/wrap"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        app:layout_textSizePercent="@string/t16"
+                        android:text="@string/hint_time"
+                        android:textColor="@color/text2"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        style="@style/wrap"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/time_tv"
+                        app:layout_textSizePercent="@string/t14"
+                        android:textColor="@color/text2" />
+
+                    <ImageView
+                        style="@style/wrap"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_go1" />
+                </com.spark.percent.PercentRelativeLayout>
+
+                <com.spark.percent.PercentRelativeLayout
+                    android:id="@+id/lay_period"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y30"
+                    app:layout_marginLeftPercent="@string/x40"
+                    app:layout_marginRightPercent="@string/x40" >
+
+                    <com.spark.widget.CusFntTextView
+                        android:id="@+id/period_tv"
+                        style="@style/wrap"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        app:layout_textSizePercent="@string/t16"
+                        android:text="@string/hint_repeat"
+                        android:textColor="@color/text2"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_period"
+                        style="@style/wrap"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/period_tv"
+                        app:layout_textSizePercent="@string/t14"
+                        android:textColor="@color/text2" />
+
+                    <ImageView
+                        style="@style/wrap"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_go1" />
+                </com.spark.percent.PercentRelativeLayout>
+
+                <com.spark.percent.PercentRelativeLayout
+                    android:id="@+id/lay_awake"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y30"
+                    app:layout_marginLeftPercent="@string/x40"
+                    app:layout_marginRightPercent="@string/x40" >
+
+                    <com.spark.widget.CusFntTextView
+                        style="@style/wrap"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        app:layout_textSizePercent="@string/t16"
+                        android:text="@string/hint_awake"
+                        android:textColor="@color/text2"
+                        android:textStyle="bold" />
+
+                    <com.zcw.togglebutton.ToggleButton
+                        android:id="@+id/enableOrDisableAwake"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="center_vertical"
+                        app:layout_heightPercent="@string/y25"
+                        app:layout_widthPercent="@string/x54"
+                        app:isDefaultOn="false" />
+                </com.spark.percent.PercentRelativeLayout>
+
+                <View
+                    android:id="@+id/view_divider3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="@string/y1"
+                    android:background="@color/textGray3" />
+            </com.spark.percent.PercentLinearLayout>
+        </ScrollView>
+    </com.spark.percent.PercentFrameLayout>
+
+</com.spark.percent.PercentRelativeLayout>

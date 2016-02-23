@@ -1,0 +1,38 @@
+<com.spark.percent.PercentFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/fill"
+    android:background="@drawable/background"
+    android:fitsSystemWindows="true" >
+
+    <com.spark.percent.PercentLinearLayout style="@style/fill_vertical" >
+
+        <com.spark.widget.TitleViewLayout
+            android:id="@+id/titleLay"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            app:layout_heightPercent="@string/y48"
+            app:titlecontent="@string/app_name" />
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            android:scrollbarStyle="outsideOverlay"
+            tools:listitem="@layout/device_list_row" />
+    </com.spark.percent.PercentLinearLayout>
+
+    <TextView
+        android:id="@+id/rights"
+        style="@style/wrap"
+        android:layout_gravity="bottom|center_horizontal"
+        app:layout_marginBottomPercent="@string/y8"
+        app:layout_textSizePercent="@string/t12"
+        android:background="@android:color/transparent"
+        android:choiceMode="singleChoice"
+        android:clickable="false"
+        android:focusable="false"
+        android:text="@string/copyRights" />
+
+</com.spark.percent.PercentFrameLayout>
